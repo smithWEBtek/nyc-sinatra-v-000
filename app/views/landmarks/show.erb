@@ -9,10 +9,10 @@
       <h2>Name</h2>
       <h3><%= @landmark.name %>, <%= @landmark.year_completed %></h3>
       <h2>Figure associated with this Landmark</h2>
-      <%  Figure.all.each do |f| %>
-      <% if f.id == @landmark.figure_id %>
+        <%  Figure.all.each do |f| %>
+        <% if f.id == @landmark.figure_id %>
 
-      <h3><a href="/figures/<%="#{f.id}"%>"><%= f.name%></h3><br>
+      <h3><a href="/figures/<%="#{f.slug}"%>"><%= f.name%></h3><br>
         <% end %>
       <% end %>
     </form>
