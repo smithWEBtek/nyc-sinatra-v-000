@@ -1,10 +1,20 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Year Completed</th>
-  </tr>
-  <tr>
-    <td><%= @landmark.name %></td>
-    <td><%= @landmark.year_completed %></td>
-  </tr>
-<table>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>INDEX</title>
+</head>
+  <body> 
+    <form action="/landmarks/landmarks" method="post"> 
+      <h1>Individual Landmark</h1>
+      <h2>Name</h2>
+      <h3><%= @landmark.name %>, <%= @landmark.year_completed %></h3>
+      <h2>Figure associated with this Landmark</h2>
+      <%  Figure.all.each do |f| %>
+      <% if f.id == @landmark.figure_id %>
+
+      <h3><a href="/figures/<%="#{f.id}"%>"><%= f.name%></h3><br>
+        <% end %>
+      <% end %>
+    </form>
+  </body>
+</html>

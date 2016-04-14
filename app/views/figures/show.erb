@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SHOW</title>
+</head>
+  <body>
+    <form action="/figures" method="get">
+    <label><h1>Individual Figure</h1></label>
+     
+    <p><h3>Name:</h3><%= @figure.name %></p>
+    <p><h4>Landmarks that include this Figure: </h4></p>
+      <% @figure.landmarks.each do |fl| %>
+      <p><a href="/landmarks/<%= fl.slug %>"><%= fl.name %></a></p>
+      <% end %>
+      
+    <p><h4>Titles for this Figure: </h4></p>
+      <% @figure.titles.each do |ft| %>
+      <p><%= ft.name %></a></p>
+      <% end %>
+    </form>
+  </body>
+</html>

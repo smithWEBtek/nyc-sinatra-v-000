@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>INDEX All Figures</title>
+</head>
+  <body>
+    <form action="/figures/figures" method="POST"> 
+       <h1>All Figures</h1>
+        <% @figures.each do |f|%>
+        <p><a href="/figures/<%= f.id %>"><%= f.name %></a></p>
+        <% end %>      
+    </form>
+  </body>
+</html>

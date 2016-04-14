@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>INDEX</title>
+</head>
+  <body> 
+    <form action="/landmarks/landmarks" method="post"> 
+      <h1>All Landmarks</h1>
+      <h2>Name, Year Completed</h2>
+        <% @landmarks.all.each do |l|%>
+ <h3><a href="/landmarks/<%= l.slug %>"><%= l.name %>, </a><%= l.year_completed %></h3>
+        <% end %>
+    </form>
+  </body>
+</html>
