@@ -13,15 +13,14 @@
       
       <label>Year Completed:</label>
       <input type="text" name="landmark[year_completed]" id="year_completed" value="<%=@landmark.year_completed.to_s%>">
-        <br></br>
+      <br></br>
 
       <h2>Figure associated with this Landmark</h2>
-        <%  Figure.all.each do |f| %>
-        <% if f.id == @landmark.figure_id %>
-        <h3><a href="/figures/<%="#{f.id}"%>"><%= f.name%></h3><br>
+        <%  Figure.all.each do |figure| %>
+        	<% if figure.id == @landmark.figure_id %>
+	        	<a href="/figures/<%="#{figure.id}"%>"><%= figure.name%></h3><br>
+        	<% end %>
         <% end %>
-        <% end %>
-
         <input type="submit" value="Edit Landmark">
     </form>
   </body>

@@ -9,13 +9,13 @@
      
     <p><h3>Name:</h3><%= @figure.name %></p>
     <p><h4>Landmarks that include this Figure: </h4></p>
-      <% @figure.landmarks.each do |fl| %>
-      <p><a href="/landmarks/<%= fl.slug %>"><%= fl.name %></a></p>
+      <% @figure.landmarks.each do |landmark| %>
+      <p><a href="/landmarks/<%= landmark.id %>"><%= landmark.id %></a></p>
       <% end %>
       
     <p><h4>Titles for this Figure: </h4></p>
-      <% @figure.titles.each do |ft| %>
-      <p><%= ft.name %></a></p>
+      <% @figure.titles.each do |title| %>
+      <p><%= title.name %></a></p>
       <% end %>
     </form>
   </body>
