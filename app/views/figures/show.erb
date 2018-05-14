@@ -8,7 +8,8 @@
     <label><h1>Individual Figure</h1></label>
      
     <p><h3>Name:</h3><%= @figure.name %></p>
-    <p><h4>Landmarks that include this Figure: </h4></p>
+		<p><h4>Landmarks with this Figure: </h4></p>
+
       <% @figure.landmarks.each do |landmark| %>
       <p><a href="/landmarks/<%= landmark.id %>"><%= landmark.id %></a></p>
       <% end %>
@@ -17,6 +18,8 @@
       <% @figure.titles.each do |title| %>
       <p><%= title.name %></a></p>
       <% end %>
-    </form>
+		</form>
+		
+		<a href='/figures/<%= @figure.id %>/edit'>Edit this figure</a>
   </body>
 </html>
